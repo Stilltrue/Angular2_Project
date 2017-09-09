@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title><%= htmlWebpackPlugin.options.title %></title>
   <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
   <!-- base url -->
   <base href="<%= htmlWebpackPlugin.options.metadata.baseUrl %>">
@@ -28,6 +27,12 @@
     ga('send', 'pageview');
   </script>
   <script async src="https://www.google-analytics.com/analytics.js"></script>
+  <title>Create your personal tasklist</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <!-- Bootstrap && jQuery -->
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/ng2-bootstrap/x.x.x/ng2-bootstrap.min.js"></script>-->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap -->
   <!-- End Google Analytics -->
 
   <!-- CSS will be injected by webpack here -->
@@ -37,10 +42,175 @@
 
 <body>
 
-  <app>
-    Loading...
-  </app>
+  <header>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <!--<a href="#" class="navbar-left"><img src="https://hsto.org/getpro/habr/company/8f2/731/893/8f27318934fc268bea41d8e66fce2b10.jpg" alt="EPAM"></a>-->
+          <a href="#" class="navbar-brand">EPAM Systems</a>
+        </div>
 
+        <div class="collapse navbar-collapse pull-left">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Courses</a></li>
+          </ul>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="glyphicon glyphicon-user"></span>
+              <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Sing in</a></li>
+              <li><a href="#">Sing up</a></li>
+              <li><a href="#">Edit</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="#">Exit</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 navigation-row">
+        <div id="custom-search-input">
+            <div class="input-group col-md-12">
+              <div class="row">
+                <input type="text" class="form-control input-lg input-search" placeholder="name fragment or date" />
+                <a class="btn btn-primary button-search">
+                  <i class="glyphicon glyphicon-search"></i>
+                  <span><strong>Find</strong></span>
+                </a>
+              </div>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-4 navigation-row pull-right">
+        <a href="#" class="btn btn-success button-create-task">
+          <span class="glyphicon glyphicon-plus"></span>
+          <span class="add-course-text">Add course</span>
+        </a>
+      </div>
+    </div>
+    <div class="row">
+      <div id="push" class="row added-items-container">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div id="li-elems" class="list-group">
+              <div class="task-template">
+                <li class="list-group-item lesson-item">
+                  <div class="row header-row">
+                    <div class="col-md-12">
+                        <h4 class="list-group-item-heading">Teach penguins to fly</h4>
+                        <a href="#" class="btn btn-primary pull-right edit-button">
+                          <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                          <span><strong>Edit course</strong></span>
+                        </a>
+                        <span class="list-group-item-text pull-right">10/09/2017</span>
+                        <span class="lesson-number"></span>
+                        <span class="lesson-duration">
+                          <span class="duration-hours">1h</span>
+                          <span class="duration-minutes">28min</span>
+                        </span>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="col-md-10">
+                        <p class="lesson-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      </div>
+                          <a href="#" class="btn btn-primary a-btn-slide-text btn-danger delete-button pull-right">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                            <span><strong>Delete</strong></span>
+                          </a>
+                    </div>
+                  </div>
+
+                </li>
+              </div>
+
+              <div class="task-template">
+                <li class="list-group-item lesson-item">
+                  <div class="row header-row">
+                    <div class="col-md-12">
+                      <h4 class="list-group-item-heading">Teach penguins to fly</h4>
+                      <a href="#" class="btn btn-primary pull-right edit-button">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        <span><strong>Edit course</strong></span>
+                      </a>
+                      <span class="list-group-item-text pull-right">10/09/2017</span>
+                      <span class="lesson-number"></span>
+                        <span class="lesson-duration">
+                          <span class="duration-hours">1h</span>
+                          <span class="duration-minutes">28min</span>
+                        </span>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="col-md-10">
+                        <p class="lesson-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      </div>
+                      <a href="#" class="btn btn-primary a-btn-slide-text btn-danger delete-button pull-right">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        <span><strong>Delete</strong></span>
+                      </a>
+                    </div>
+                  </div>
+
+                </li>
+              </div>
+
+              <div class="task-template">
+                <li class="list-group-item lesson-item">
+                  <div class="row header-row">
+                    <div class="col-md-12">
+                      <h4 class="list-group-item-heading">Teach penguins to fly</h4>
+                      <a href="#" class="btn btn-primary pull-right edit-button">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        <span><strong>Edit course</strong></span>
+                      </a>
+                      <span class="list-group-item-text pull-right">10/09/2017</span>
+                      <span class="lesson-number"></span>
+                        <span class="lesson-duration">
+                          <span class="duration-hours">1h</span>
+                          <span class="duration-minutes">28min</span>
+                        </span>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="col-md-10">
+                        <p class="lesson-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                      </div>
+                      <a href="#" class="btn btn-primary a-btn-slide-text btn-danger delete-button pull-right">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        <span><strong>Delete</strong></span>
+                      </a>
+                    </div>
+                  </div>
+
+                </li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="bottom-footer container">
+    <span>&copy; Copyright 2017.</span>&nbsp;<span>Created in Hilel via Angular 2.</span>&nbsp;<span>All rights reserved</span>
+  </footer>
   <!-- Scripts will be injected by webpack here -->
 </body>
 </html>
