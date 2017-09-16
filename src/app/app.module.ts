@@ -33,7 +33,7 @@ import { XLargeDirective } from './home/x-large';
 
 //components
 
-import { HeaderComponent, FooterComponent, UserComponent, SearchbarComponent, CourseComponent } from './pages/index';
+import { HeaderComponent, FooterComponent, UserComponent, SearchbarComponent, CourseComponent, ButtonComponent } from './pages/index';
 
 
 import '../styles/styles.scss';
@@ -62,7 +62,7 @@ type StoreType = {
     HomeComponent,
     NoContentComponent,
     XLargeDirective,
-    HeaderComponent, FooterComponent, UserComponent, SearchbarComponent, CourseComponent
+    HeaderComponent, FooterComponent, UserComponent, SearchbarComponent, CourseComponent, ButtonComponent
   ],
   /**
    * Import Angular's modules.

@@ -1,26 +1,22 @@
 <div class="container">
 
-  <--searchbar WAS HERE !!!-->
-
+  <app-searchbar></app-searchbar>
   <div class="row">
     <div id="push" class="row added-items-container">
       <div class="col-md-12">
         <div class="panel panel-default">
           <div id="li-elems" class="list-group">
-            <div class="task-template" *ngFor="let courseItem of courseList" [course]="course">
+            <div class="task-template" *ngFor="let courseItem of courseList">
               <li class="list-group-item lesson-item">
                 <div class="row header-row">
                   <div class="col-md-12">
                     <h4 class="list-group-item-heading">{{courseItem.name}}</h4>
-                    <a href="#" class="btn btn-primary pull-right edit-button">
-                      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
-                      <span><strong>Edit course</strong></span>
-                    </a>
+                    <app-button (buttonClick)="onButtonClick($event)" [buttonText]="editButtonText" [buttonClasses]="editClasses"></app-button>
                     <span class="list-group-item-text pull-right">{{courseItem.date}}</span>
                     <span class="lesson-number"></span>
                         <span class="lesson-duration">
                           <span class="duration-hours">{{courseItem.duration}}</span>
-                          <span class="duration-minutes">{{courseItem.duration}}</span>
+                          <span class="duration-minutes"></span>
                         </span>
                   </div>
                 </div>
@@ -30,10 +26,7 @@
                     <div class="col-md-10">
                       <p class="lesson-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                     </div>
-                    <a href="#" class="btn btn-primary a-btn-slide-text btn-danger delete-button pull-right">
-                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                      <span><strong>Delete</strong></span>
-                    </a>
+                    <app-button (buttonClick)="onButtonClick($event)" [buttonText]="deleteButtonText" [buttonClasses]="deleteClasses"></app-button>
                   </div>
                 </div>
 

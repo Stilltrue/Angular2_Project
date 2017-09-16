@@ -4,18 +4,12 @@
       <div class="input-group col-md-12">
         <div class="row">
           <input type="text" class="form-control input-lg input-search" placeholder="name fragment or date" />
-          <a class="btn btn-primary button-search">
-            <i class="glyphicon glyphicon-search"></i>
-            <span><strong>Find</strong></span>
-          </a>
+          <app-button [buttonText]="findText"></app-button>
         </div>
       </div>
     </div>
   </div>
   <div class="col-md-4 navigation-row pull-right">
-    <a href="#" class="btn btn-success button-create-task">
-      <span class="glyphicon glyphicon-plus"></span>
-      <span class="add-course-text">Add course</span>
-    </a>
+    <app-button [buttonText]="addLessonButtonText" [buttonClasses]="addNewLessonClasses"></app-button>
   </div>
 </div>

@@ -19,15 +19,10 @@ import { AppState } from './app.service';
     './app.component.css'
   ],
   template: `
-    <-- Header WAS HERE -->
 
   <app-header [logoTitle]="appLogoTitle" (logoClick)="onLogoClick($event)"></app-header>
 
-  <-- TASKLIST WAS HERE -->
-
   <app-courselist></app-courselist>
-
-  <-- Footer WAS HERE -->
 
   <app-footer></app-footer>
   `

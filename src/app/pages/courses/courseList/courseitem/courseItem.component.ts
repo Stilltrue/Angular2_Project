@@ -1,3 +1,19 @@
-/**
- * Created by Vlad on 09.09.2017.
- */
+//import {
+//  Component,
+//  OnInit,
+//  ViewEncapsulation,
+//  Input,
+//  Output,
+//} from '@angular/core';
+//
+//@Component({
+//  selector: 'app-courseItem',
+//  encapsulation: ViewEncapsulation.None,
+//  //styleUrls: ['/header.scss'],
+//  templateUrl: './courseItem.html'
+//})
+//
+//
+//export class CourseItemComponent {
+//
+//}

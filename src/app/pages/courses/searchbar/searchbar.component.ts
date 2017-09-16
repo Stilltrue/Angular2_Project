@@ -1,7 +1,8 @@
 import {
   Component,
   OnInit,
-  ViewEncapsulation
+  ViewEncapsulation,
+  Input
 } from '@angular/core';
 
 @Component({
@@ -13,5 +14,7 @@ import {
 
 
 export class SearchbarComponent {
-
+  findText: string = 'Find';
+  addLessonButtonText: string = "Add course";
+  addNewLessonClasses: string = "btn btn-success button-create-task"
 }

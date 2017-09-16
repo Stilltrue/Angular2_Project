@@ -7,7 +7,7 @@ import {
 @Component({
   selector: 'cr-courses', //header
   encapsulation: ViewEncapsulation.None,
-  styleUrls: ['/courses.scss'],
+  //styleUrls: ['/courses.scss'],
   templateUrl: ['/courses.html']
 })
 
